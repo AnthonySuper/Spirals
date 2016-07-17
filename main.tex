@@ -1,0 +1,75 @@
+\documentclass[a4paper]{book}
+\usepackage{hyperref}
+\usepackage[utf8]{inputenc}
+\usepackage{todonotes}
+\usepackage{censor}
+\usepackage{enumitem}
+\usepackage[breakable, skins]{tcolorbox}
+
+\usepackage[a4paper]{geometry}
+\usepackage{multicol}
+\usepackage{tocloft}
+   
+\newcommand{\quoteauthor}[1]{\begin{flushright}--\textit{#1}\end{flushright}}
+
+\newenvironment{goddesc}{
+\begin{tcolorbox}
+\begin{description}[style=multiline,leftmargin=3cm]
+\newcommand{\Alignment}[1]{\item[Alignment] ##1}
+\newcommand{\Domains}[1]{\item[Domains] ##1}
+\newcommand{\Symbol}[1]{\item[Symbol] ##1}
+}{
+\end{description}
+\end{tcolorbox}
+}
+
+\newcommand{\VariantRule}[1]{
+\addcontentsline{toc}{}{\protect\hspace{5em}\textit{Variant Rule: #1}\protect\cftdotfill{\cftdotsep} }%
+\subsubsection*{Variant Rule: #1}\setcounter{tocdepth}{1}}%
+\newcommand{\rolltablecolumnnumber}{1}
+
+\newenvironment{rolltable}[2][\textheight]{
+\begin{tcolorbox}[enhanced jigsaw, breakable, break at=#1]
+\begin{center}
+#2
+\end{center}
+\begin{footnotesize}
+\begin{description}[style=multiline,leftmargin=1cm]
+}{
+\end{description}
+\end{footnotesize}
+\end{tcolorbox}
+}
+
+
+\hypersetup{ 
+    colorlinks,
+    citecolor=black,
+    filecolor=black,
+    linkcolor=black,
+    urlcolor=blackf
+}
+\title{Spirals}
+\author{Anthony \censor{Super}}
+\begin{document}
+\setcounter{tocdepth}{1}
+\maketitle
+Spirals is a Dungeons and Dragons 5\textsuperscript{th} edition campaign setting.
+It is a highly magical world with unusual terrain and plot elements.
+This is not a module, but rather a campaign guidebook---it provides a description of a world and those who live within it, so you can make your own adventures.
+\listoftodos
+\tableofcontents 
+
+\part{The World's Structure}
+\include{logistics/land}
+\include{logistics/magic}
+\part{The World's Locations}
+\include{locations/core}
+\include{locations/major_tendrils}
+\include{locations/minor}
+\part{The World's Inhabitants (and their Works)}
+\include{peopleworks/gods}
+\include{peopleworks/technology}
+\include{peopleworks/culture}
+
+\end{document}

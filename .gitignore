@@ -1,0 +1,10 @@
+*.pdf
+*.toc
+*.tox
+*.log
+*.out
+*.synctex.gz
+*.tdo
+*.aux
+.DS_STORE
+
