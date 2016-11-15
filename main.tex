@@ -15,9 +15,9 @@
 \newenvironment{goddesc}{
 \begin{tcolorbox}
 \begin{description}[style=multiline,leftmargin=3cm]
-\newcommand{\Alignment}[1]{\item[Alignment] ##1}
 \newcommand{\Domains}[1]{\item[Domains] ##1}
 \newcommand{\Symbol}[1]{\item[Symbol] ##1}
+\newcommand{\Level}[1]{\item[Level] ##1}
 }{
 \end{description}
 \end{tcolorbox}
@@ -42,6 +42,22 @@
 }
 
 
+\definecolor{adventureideabg}{HTML}{aceca1}
+\definecolor{adventureideaheaderbg}{HTML}{629460}
+
+\newenvironment{itquote}
+  {\begin{quote}\itshape}
+  {\end{quote}\ignorespacesafterend}
+
+\newenvironment{itpars}
+  {\par\itshape}
+  {\par}
+  
+\newenvironment{adventureidea}[2][\textheight]
+  {\begin{tcolorbox}[title=Adventure Idea: #2,colback=adventureideabg,colbacktitle=adventureideaheaderbg, breakable, break at=#1]}
+  {\end{tcolorbox}}
+
+
 \hypersetup{ 
     colorlinks,
     citecolor=black,
@@ -51,9 +67,13 @@
 }
 \title{Spirals}
 \author{Anthony \censor{Super}}
+
 \begin{document}
 \setcounter{tocdepth}{1}
 \maketitle
+
+
+
 Spirals is a Dungeons and Dragons 5\textsuperscript{th} edition campaign setting.
 It is a highly magical world with unusual terrain and plot elements.
 This is not a module, but rather a campaign guidebook---it provides a description of a world and those who live within it, so you can make your own adventures.
@@ -63,13 +83,15 @@ This is not a module, but rather a campaign guidebook---it provides a descriptio
 \part{The World's Structure}
 \include{logistics/land}
 \include{logistics/magic}
+
 \part{The World's Locations}
 \include{locations/core}
 \include{locations/major_tendrils}
 \include{locations/minor}
+
 \part{The World's Inhabitants (and their Works)}
 \include{peopleworks/gods}
-\include{peopleworks/technology}
+\include{peopleworks/items}
 \include{peopleworks/culture}
 
 \end{document}
