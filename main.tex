@@ -6,7 +6,7 @@
 \usepackage{enumitem}
 \usepackage[breakable, skins]{tcolorbox}
 
-\usepackage[a4paper]{geometry}
+\usepackage[a4paper, margin=1in]{geometry}
 \usepackage{multicol}
 \usepackage{tocloft}
    
@@ -44,6 +44,8 @@
 
 \definecolor{adventureideabg}{HTML}{aceca1}
 \definecolor{adventureideaheaderbg}{HTML}{629460}
+\definecolor{spellheaderbg}{HTML}{b1ede8}
+\definecolor{spellbg}{HTML}{F0F7F4}
 
 \newenvironment{itquote}
   {\begin{quote}\itshape}
@@ -54,9 +56,20 @@
   {\par}
   
 \newenvironment{adventureidea}[2][\textheight]
-  {\begin{tcolorbox}[title=Adventure Idea: #2,colback=adventureideabg,colbacktitle=adventureideaheaderbg, breakable, break at=#1]}
+  {\begin{tcolorbox}[title=Adventure Idea: #2,colback=adventureideabg,colbacktitle=adventureideaheaderbg, breakable, break at=#1]
+
+  }
   {\end{tcolorbox}}
 
+\newenvironment{spell}[2][\textheight]
+{\begin{tcolorbox}[title=#2,colback=spellbg,colbacktitle=spellheaderbg, breakable, break at=#1]
+  \newcommand{\Type}[1]{\textit{##1}}
+  \newcommand{\CastTime}[1]{\\ \textbf{Casting Time} ##1}
+  \newcommand{\Components}[1]{\\ \textbf{Components:} ##1}
+  \newcommand{\Range}[1]{\\ \textbf{Range:} ##1}
+  \newcommand{\Duration}[1]{\\ \textbf{Duration:} ##1}
+  }
+  {\end{tcolorbox}}
 
 \hypersetup{
     pdftex,
