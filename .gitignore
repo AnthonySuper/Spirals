@@ -7,4 +7,6 @@
 *.tdo
 *.aux
 .DS_STORE
-
+*.idx
+*.ilg
+*.ind

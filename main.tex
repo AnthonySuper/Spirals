@@ -1,14 +1,22 @@
+% !TEX encoding = UTF-8 Unicode
+% !TEX TS-program = latexmk
 \documentclass[a4paper]{book}
-\usepackage{hyperref}
 \usepackage[utf8]{inputenc}
 \usepackage{todonotes}
 \usepackage{censor}
 \usepackage{enumitem}
 \usepackage[breakable, skins]{tcolorbox}
+\usepackage{imakeidx}
+
+\makeindex
 
 \usepackage[a4paper, margin=1in]{geometry}
 \usepackage{multicol}
 \usepackage{tocloft}
+
+\usepackage{hyperref}
+
+
    
 \newcommand{\quoteauthor}[1]{\begin{flushright}--\textit{#1}\end{flushright}}
 
@@ -86,11 +94,15 @@
 \setcounter{tocdepth}{1}
 \maketitle
 
+\todo[inline]{Add an actual hook to get people interested in the setting.}
 
+Spirals is a Dungeons and Dragons 5\textsuperscript{th} edition campaign setting with an extremely strange physical structure, plentiful magic, and infinite extensibility.
+This book is not a campaign module, but a description of the setting, how it works, and some rules you may need to be aware of.
+This book mostly contains knowledge that the denizens of the world would know, so it is generally suitable to distribute to players, although that should be at the DM's discretion.
 
-Spirals is a Dungeons and Dragons 5\textsuperscript{th} edition campaign setting.
-It is a highly magical world with unusual terrain and plot elements.
-This is not a module, but rather a campaign guidebook---it provides a description of a world and those who live within it, so you can make your own adventures.
+Although we don't provide a pre-made adventure in this book, we do provide "adventure ideas" throughout, to get your own creative juices flowing.
+Hopefully they can be of some use.
+
 \listoftodos
 \tableofcontents 
 
@@ -107,5 +119,7 @@ This is not a module, but rather a campaign guidebook---it provides a descriptio
 \include{peopleworks/gods}
 \include{peopleworks/items}
 \include{peopleworks/culture}
+
+\printindex
 
 \end{document}
