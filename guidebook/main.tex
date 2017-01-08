@@ -7,6 +7,10 @@
 \usepackage{enumitem}
 \usepackage[breakable, skins]{tcolorbox}
 \usepackage{imakeidx}
+\usepackage{titlesec}
+\usepackage{bold-extra}
+\usepackage{wallpaper}
+
 
 \makeindex
 
@@ -16,10 +20,32 @@
 
 \usepackage{hyperref}
 
+% SECTION HEADING FORMATTING
+\definecolor{headerred}{HTML}{58180D}
+\definecolor{headerunderlinegold}{HTML}{C9AD6A}
 
-   
+\titleformat{\chapter}[block]
+{\bfseries\Huge\color{headerred}}
+{Chapter \thechapter:}
+{1ex}{}
+
+
+\titleformat{\section}
+  {\Large\bfseries\color{headerred}\scshape}
+  {\thesection}{1em}{}
+  
+\titleformat{\subsection}
+  {\normalfont\large\bfseries\color{headerred}}
+  {\thesubsection}
+  {1em}
+  {}
+  [{\color{headerunderlinegold}\nobreak\titlerule}]
+  
 \newcommand{\quoteauthor}[1]{\begin{flushright}--\textit{#1}\end{flushright}}
 
+% BACKGROUND IMAGE
+
+% GOD DESCRIPTION
 \newenvironment{goddesc}{
 \begin{tcolorbox}
 \begin{description}[style=multiline,leftmargin=3cm]
@@ -30,6 +56,8 @@
 \end{description}
 \end{tcolorbox}
 }
+
+\newcommand{\FancyLetter}[1]{#1}
 
 \newcommand{\VariantRule}[1]{
 \addcontentsline{toc}{}{\protect\hspace{5em}\textit{Variant Rule: #1}\protect\cftdotfill{\cftdotsep} }%
@@ -54,6 +82,9 @@
 \definecolor{adventureideaheaderbg}{HTML}{629460}
 \definecolor{spellheaderbg}{HTML}{b1ede8}
 \definecolor{spellbg}{HTML}{F0F7F4}
+
+
+
 
 \newenvironment{itquote}
   {\begin{quote}\itshape}
@@ -88,11 +119,14 @@
     urlcolor=blackf
 }
 \title{Spirals}
-\author{Anthony \censor{Super}}
+\author{Anthony Super}
 
 \begin{document}
 \setcounter{tocdepth}{1}
+
 \maketitle
+
+\TileWallPaper{2560px}{1090px}{assets/bgimg.jpeg}
 
 \todo[inline]{Add an actual hook to get people interested in the setting.}
 
@@ -103,6 +137,11 @@ This book mostly contains knowledge that the denizens of the world would know, s
 Although we don't provide a pre-made adventure in this book, we do provide "adventure ideas" throughout, to get your own creative juices flowing.
 Hopefully they can be of some use.
 
+Spirals is built in \LaTeX, and its source code is viewable online at https://github.com/AnthonySuper/Spirals.
+
+
+
+
 \listoftodos
 \tableofcontents 
 
@@ -110,11 +149,11 @@ Hopefully they can be of some use.
 \include{chapters/land}
 \include{chapters/magic}
 \include{chapters/core}
-\include{chapters/major_tendrils}
-\include{chapters/minor}
+\include{chapters/root_tendrils}
 \include{chapters/gods}
 \include{chapters/items}
-\include{chapters/culture}
+\include{chapters/life_in_the_world}
+\include{chapters/cultures_of_the_world}
 
 \printindex
 
